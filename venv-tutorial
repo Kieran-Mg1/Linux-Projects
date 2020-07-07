@@ -1,0 +1,35 @@
+## "$" denotes commands in the bash terminal
+# I like to create a new directory to keep all the files I may need for a project
+$mkdir Bayes
+
+# Change to this directory
+$ cd Bayes
+
+## Depending on what you have installed, you can download the packages needed for a virtual environment
+# For python 3:
+$ pip3 install virtualenv
+
+# Or, if using miniconda/anaconda
+$ conda install virtual env
+
+# This can (and did for me) throw an error message as the installation is to the user, so you'll need to add
+the users PATH
+$ export PATH=$:/home/ubuntu/.local/bin
+
+# Note that unless you change the ~./ profile
+$ source ~./profile
+#or
+$ source ~./bashrc
+# Note however this is often considered a security flaw as the bash terminal will look in the current directory for executables, for example if you cd into a directory and run ls, a malicious programme called ls would run instead
+
+# Installing the requests package for a venv is also a good idea, to keep track of what packages are currently loaded for the project
+$ pipenv install requests
+
+# Create a virtual environment
+$ virtualenv bayes
+
+# Run venv
+$ source bayes/venv/bin/activate
+
+# To halt
+$ deactivate
